@@ -23,3 +23,17 @@ Curso : Construcción y Pruebas de Software - Tecsup (4 C24)
 ### Forma de trabajo
 
 Cada integrante trabaja en su propia rama `feature/casoN-...` y al terminar la integra a `main` con merge.
+
+### Ejecutar las pruebas (consola de Windows)
+
+```
+mvnw.cmd test -Dspring.profiles.active=h2
+```
+
+Para una sola clase:
+
+```
+mvnw.cmd test -Dspring.profiles.active=h2 -Dtest=VetServiceTest
+```
+
+Las pruebas se conectan a la base de datos H2 en memoria (modo MySQL), que se crea con `schema.sql` y se llena con `data.sql` al iniciar.
